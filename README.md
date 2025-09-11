@@ -1,4 +1,4 @@
-# Data Analytics & Forecasting | Swarovski Internship (Jun 2024 - Jul 2024)
+# Data Analytics & Forecasting | Swarovski (Jun 2024 - Jul 2024)
 
 This repository documents my internship project at **Swarovski, Pune**, where I worked on building 
 **predictive models** and **analytics dashboards** to optimize production, demand, and inventory planning.

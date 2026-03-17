@@ -13,15 +13,15 @@ Main dataset containing manufacturing batch data, defect counts, and yield (Okpe
 
 | Art | Code | BatchNo | wCPg | OkQty | Okper | GDper | RCDper | SFInDate | PackedDate |
 |-----|------|--------|------|-------|-------|-------|--------|----------|------------|
-| A.5810.MM10.0 | 650 | 910229063 | 143.676 | 10600 | 46.63 | 19.71 | 33.66 | 16/01/2023 | 12/01/2024 |
-| A.5810.MM10.0 | 815 | 910216858 | 143.679 | 10500 | 52.28 | 16.37 | 31.35 | 10/02/2023 | 09/01/2024 |
-| A.5810.MM6.0  | 296 | 910232755 | 30.76   | 47002 | 85.69 | 4.41  | 9.9   | 28/02/2023 | 02/01/2024 |
-| A.5810.MM8.0  | 969 | 910221976 | 73.368  | 14751 | 54.26 | 17.24 | 28.5  | 10/06/2023 | 28/01/2024 |
-| A.5810.MM8.0  | 650 | 910223903 | 73.368  | 19000 | 71.09 | 11.62 | 17.29 | 12/07/2023 | 15/01/2024 |
+| A.XXXX.MM10.0 | 650 | B001 | 143.676 | 10600 | 46.63 | 19.71 | 33.66 | 16/01/2023 | 12/01/2024 |
+| A.XXXX.MM10.0 | 815 | B002 | 143.679 | 10500 | 52.28 | 16.37 | 31.35 | 10/02/2023 | 09/01/2024 |
+| A.XXXX.MM6.0  | 296 | B003 | 30.76   | 47002 | 85.69 | 4.41  | 9.9   | 28/02/2023 | 02/01/2024 |
+| A.XXXX.MM8.0  | 969 | B004 | 73.368  | 14751 | 54.26 | 17.24 | 28.5  | 10/06/2023 | 28/01/2024 |
+| A.XXXX.MM8.0  | 650 | B005 | 73.368  | 19000 | 71.09 | 11.62 | 17.29 | 12/07/2023 | 15/01/2024 |
 
 ---
 **Note:**  
-- The dataset contains a large number of columns
+- The dataset contains a large number of columns 
 - Only a subset is shown here for illustration.
   
 ---
@@ -34,22 +34,22 @@ Mapping of colour codes to actual colour descriptions.
 
 | Color Code | Color |
 |-----------|------|
-| 160 | Mauve |
-| 294 | Rosaline |
-| 296 | Gold |
-| 298 | Black |
-| 300 | Peach |
-| 301 | Burgundy |
-| 302 | Lt. Blue |
-| 305 | Powder Almond |
-| 306 | Bright Gold |
-| 335 | Mystic Black |
+| 101 | Color_A |
+| 102 | Color_B |
+| 103 | Color_C |
+| 104 | Color_D |
+| 105 | Color_E |
+| 106 | Color_F |
+| 107 | Color_G |
+| 108 | Color_H |
+| 109 | Color_I |
+| 110 | Color_J |
 
 ---
 
 **Note:**  
-- The dataset contains a large number of colour codes including metallic, pastel, neon, and special finish variants.  
-- Only a subset is shown here for illustration.
+- Color codes and names have been anonymized for confidentiality.  
+- Original dataset contains detailed color mappings used in production.
 
 ---
 
@@ -61,134 +61,85 @@ Mapping of product codes to product categories.
 
 | Code | Product |
 |------|--------|
-| 5810 | Through hole |
-| 5811 | Big size hole |
-| 5816 | Drops |
-| 5817 | Tops |
-| 5818 | Half hole |
-| 5821 | Odd size |
-| 5824 | Rice shape |
-| 5860 | Coin |
-| 5809 | No hole |
-| 5841 | Odd size |
+| P101 | Type_A |
+| P102 | Type_B |
+| P103 | Type_C |
+| P104 | Type_D |
+| P105 | Type_E |
+| P106 | Type_F |
+| P107 | Type_G |
+| P108 | Type_H |
+| P109 | Type_I |
+| P110 | Type_J |
 
 ---
 
 **Note:**  
-- Product codes represent different bead shapes and drilling types.  
-- Multiple codes may correspond to variations of similar categories (e.g., "Odd size").
+- Product codes and descriptions have been anonymized for confidentiality.  
+- Original dataset contains detailed product types based on bead shape and drilling configuration.
 
 ---
 
-## 4. Dictionary (`dictionary.csv`)
+## 4. Data Dictionary (`dictionary.csv`)
 
-Metadata describing column meanings and manufacturing terms.
-
-### Sample Data
-
-This file describes the meaning of each column in the dataset.
+This file provides a high-level description of features used in the dataset.
 
 ---
 
 ### Core Features
 
-| Column | Description |
-|--------|------------|
-| Art | Product number (includes product name and size) |
-| Code | Colour code |
-| BatchNo | Batch number from production |
-| SysNo | Unique identifier for product + size + colour |
-| RBFA | Raw bead batch number |
-| wCPg | Weight count of 100 beads |
-| SFINkg | Weight of semi-finished batch (kg) before coating |
-| OkQty | Number of beads after coating |
-| GDkg | Weight removed as glass defects |
-| RCDkg | Weight removed as removing/coating defects |
-| SFInDate | Production date |
-| PackedDate | Packing date |
+| Feature Type | Description |
+|-------------|------------|
+| Product Information | Includes product type, size, and identifiers |
+| Batch Information | Production batch and tracking identifiers |
+| Weight Metrics | Measurements related to bead weight and processing |
+| Quantity Metrics | Counts of processed and accepted beads |
+| Date Features | Production and packaging timestamps |
 
 ---
 
-### Glass Defects (%)
+### Defect Features
 
-| Column | Description |
-|--------|------------|
-| a110 | Scratches |
-| b110 | Pinholes |
-| c110 | Splitters |
-| d110 | Waviness |
-| e110 | Flattened Pole |
-
----
-
-### Coating Defects (%)
-
-| Column | Description |
-|--------|------------|
-| a111 | Color Change |
-| b111 | Drops |
-| c111 | Lines / Dust / Spot |
-| d111 | Air Bubbles |
-| e111 | Coating Scratches |
-| f111 | Wrong Color |
-| g111 | Bubble at Hole |
-| h111 | Coating Circle |
-
----
-
-### Removing Defects (%)
-
-| Column | Description |
-|--------|------------|
-| a112 | Excess Cutting |
-| b112 | Nose |
-| c112 | Peeled Coating |
-| d112 | Removing Scratches |
+| Feature Type | Description |
+|-------------|------------|
+| Glass Defects (%) | Percentage of defects observed in initial material stage |
+| Coating Defects (%) | Percentage of defects during coating process |
+| Removing Defects (%) | Percentage of defects during finishing/removal stage |
 
 ---
 
 ### Derived Metrics
 
-| Column | Description |
-|--------|------------|
-| QtyTheo | Max beads processable (based on trays) |
-| SFINNos | Semi-finished bead count |
-| GDNos | Glass defect count |
-| RCDNos | Coating defect count |
-| QtyPer | (OkQty / QtyTheo) × 100 |
-| Okper | (OkQty / SFINNos) × 100 |
-| GDper | (GDNos / SFINNos) × 100 |
-| RCDper | (RCDNos / SFINNos) × 100 |
-| totqtyno | Same as SFINNos |
+| Feature Type | Description |
+|-------------|------------|
+| Yield Metrics | Percentage of accepted beads (target variable: Okper) |
+| Defect Ratios | Relative proportion of defects across stages |
+| Process Efficiency | Ratios comparing output vs theoretical capacity |
 
 ---
 
-### Defect Counts (Absolute Numbers)
+### Defect Counts
 
-| Column | Description |
-|--------|------------|
-| a110no – e110no | Glass defect counts |
-| a111no – h111no | Coating defect counts |
-| a112no – d112no | Removing defect counts |
+| Feature Type | Description |
+|-------------|------------|
+| Absolute Defect Counts | Number of defects observed across different stages |
 
 ---
 
 ### Time Features
 
-| Column | Description |
-|--------|------------|
-| PackMonth | Packaging month |
-| SFINMonth | Production month |
-| Packyr | Packaging year |
-| SFInyr | Production year |
+| Feature Type | Description |
+|-------------|------------|
+| Production Time | Month and year of manufacturing |
+| Packaging Time | Month and year of packaging |
 
 ---
 
 ### Other
 
-| Column | Description |
-|--------|------------|
-| Loss | % of beads lost due to misfitting pins |
+| Feature Type | Description |
+|-------------|------------|
+| Loss | Percentage of material loss during handling |
 
 ---
 

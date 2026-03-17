@@ -5,7 +5,7 @@ Below are sample structures of each dataset to help understand the schema.
 
 ---
 
-## 1. CP Results (`cp_results.csv`)
+## 1. CP Results (`CP Results 2018 to 6_2024.xlsx`)
 
 Main dataset containing manufacturing batch data, defect counts, and yield (Okper).
 
@@ -26,38 +26,43 @@ Main dataset containing manufacturing batch data, defect counts, and yield (Okpe
   
 ---
 
-## 2. Colour Code (`colour_code.csv`)
+## 2. Data Dictionary (`Swarovski_dictionary.xlsx`)
 
-Mapping of colour codes to actual colour descriptions.
+This Excel file contains multiple sheets providing metadata and lookup tables used in the project.
 
-### Sample Data
+---
+
+### Sheet 1: Description
+
+Contains high-level descriptions of dataset columns and feature groups.
+
+| Feature Type | Description |
+|-------------|------------|
+| Product & Batch Info | Product identifiers, batch numbers, and tracking details |
+| Weight & Quantity Metrics | Measurements related to bead weight and counts |
+| Date Features | Production and packaging timestamps |
+| Defect Features | Defect percentages across different manufacturing stages |
+| Derived Metrics | Yield, defect ratios, and efficiency-related features |
+
+---
+
+### Sheet 2: Colour Codes
+
+Mapping of colour codes to colour categories used in production.
 
 | Color Code | Color |
 |-----------|------|
-| 101 | Color_A |
-| 102 | Color_B |
-| 103 | Color_C |
-| 104 | Color_D |
-| 105 | Color_E |
-| 106 | Color_F |
-| 107 | Color_G |
-| 108 | Color_H |
-| 109 | Color_I |
-| 110 | Color_J |
+| C101 | Color_A |
+| C102 | Color_B |
+| C103 | Color_C |
+| C104 | Color_D |
+| C105 | Color_E |
 
 ---
 
-**Note:**  
-- Color codes and names have been anonymized for confidentiality.  
-- Original dataset contains detailed color mappings used in production.
-
----
-
-## 3. Product Code (`product_code.csv`)
+### Sheet 3: Product Codes
 
 Mapping of product codes to product categories.
-
-### Sample Data
 
 | Code | Product |
 |------|--------|
@@ -66,80 +71,12 @@ Mapping of product codes to product categories.
 | P103 | Type_C |
 | P104 | Type_D |
 | P105 | Type_E |
-| P106 | Type_F |
-| P107 | Type_G |
-| P108 | Type_H |
-| P109 | Type_I |
-| P110 | Type_J |
 
 ---
 
-**Note:**  
-- Product codes and descriptions have been anonymized for confidentiality.  
-- Original dataset contains detailed product types based on bead shape and drilling configuration.
-
----
-
-## 4. Data Dictionary (`dictionary.csv`)
-
-This file provides a high-level description of features used in the dataset.
-
----
-
-### Core Features
-
-| Feature Type | Description |
-|-------------|------------|
-| Product Information | Includes product type, size, and identifiers |
-| Batch Information | Production batch and tracking identifiers |
-| Weight Metrics | Measurements related to bead weight and processing |
-| Quantity Metrics | Counts of processed and accepted beads |
-| Date Features | Production and packaging timestamps |
-
----
-
-### Defect Features
-
-| Feature Type | Description |
-|-------------|------------|
-| Glass Defects (%) | Percentage of defects observed in initial material stage |
-| Coating Defects (%) | Percentage of defects during coating process |
-| Removing Defects (%) | Percentage of defects during finishing/removal stage |
-
----
-
-### Derived Metrics
-
-| Feature Type | Description |
-|-------------|------------|
-| Yield Metrics | Percentage of accepted beads (target variable: Okper) |
-| Defect Ratios | Relative proportion of defects across stages |
-| Process Efficiency | Ratios comparing output vs theoretical capacity |
-
----
-
-### Defect Counts
-
-| Feature Type | Description |
-|-------------|------------|
-| Absolute Defect Counts | Number of defects observed across different stages |
-
----
-
-### Time Features
-
-| Feature Type | Description |
-|-------------|------------|
-| Production Time | Month and year of manufacturing |
-| Packaging Time | Month and year of packaging |
-
----
-
-### Other
-
-| Feature Type | Description |
-|-------------|------------|
-| Loss | Percentage of material loss during handling |
+**Note:**
+- The original Excel file contains detailed mappings and descriptions.
+- Values have been anonymized for confidentiality.
 
 ---
 

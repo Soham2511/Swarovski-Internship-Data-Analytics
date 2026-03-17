@@ -20,6 +20,11 @@ Main dataset containing manufacturing batch data, defect counts, and yield (Okpe
 | A.5810.MM8.0  | 650 | 910223903 | 73.368  | 19000 | 71.09 | 11.62 | 17.29 | 12/07/2023 | 15/01/2024 |
 
 ---
+**Note:**  
+- The dataset contains a large number of columns
+- Only a subset is shown here for illustration.
+  
+---
 
 ## 2. Colour Code (`colour_code.csv`)
 

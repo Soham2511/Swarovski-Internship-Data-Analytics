@@ -5,7 +5,7 @@ Below are sample structures of each dataset to help understand the schema.
 
 ---
 
-## 1. CP Results (`CP Results 2018 to 6_2024.xlsx`)
+## 1. CP Results (`cp_results.xlsx`)
 
 Main dataset containing manufacturing batch data, defect counts, and yield (Okper).
 
@@ -21,7 +21,7 @@ Main dataset containing manufacturing batch data, defect counts, and yield (Okpe
 
 ---
 **Note:**  
-- The dataset contains a large number of columns 
+- The dataset contains a large number of features (70+ columns including defect metrics and process variables)
 - Only a subset is shown here for illustration.
   
 ---
@@ -80,6 +80,6 @@ Mapping of product codes to product categories.
 
 ---
 
-## Note
+## Final Note
 - These samples are illustrative and do not represent actual data values.  
 - Actual dataset must be placed in the `data/` folder to run the project.
